@@ -60,7 +60,7 @@ def add_bookmark(gh_data, pb_api_token, lang_tag_prefix):
     language    -> tags + lang_tag_prefix
     """
     description = gh_data['description']
-    if gh_data['homepage']:
+    if gh_data['homepage'] and (gh_data['homepage'] is str):
         description += '\n\nProject homepage: {}'.format(gh_data['homepage'])
     tags = 'github-star'
     if gh_data['language']:
